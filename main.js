@@ -5,7 +5,7 @@ let count = 0;
 
 const addItem = (event) => {
     if (item.value !== "") {
-        section.innerHTML += `<p id="${count++}">${item.value}<span><i class="fa-solid fa-xmark"></i></span></p>`;
+        section.innerHTML += `<p id="${count++}">${item.value}<span class="delete"><i class="fa-solid fa-xmark"></i></span></p>`;
         item.value = "";
     }
 };
@@ -18,4 +18,4 @@ item.addEventListener("keydown", (event) => {
 });
 
 const items = document.querySelectorAll('section > p');
-const deleteButtons = document.querySelectorAll('section > p > span');
+const deleteButtons = document.querySelectorAll('.delete');
