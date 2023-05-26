@@ -1,17 +1,21 @@
 const add = document.getElementById('add');
 const section = document.querySelector('section');
-const item = document.getElementById('item');
+const itemName = document.getElementById('item-name');
 let count = 0;
 
-const addItem = (event) => {
-    if (item.value !== "") {
-        section.innerHTML += `<p id="${count++}">${item.value}<span class="delete"><i class="fa-solid fa-xmark"></i></span></p>`;
-        item.value = "";
+const addItem = () => {
+    if (itemName.value !== "") {
+        const item = document.createElement('p');
+        item.setAttribute('id', count++);
+        item.innerHTML = `${itemName.value}<span class="delete"><i class="fa-solid fa-xmark"></i></span>`;
+
+        section.appendChild(item);
+        itemName.value = "";
     }
 };
 
 add.addEventListener("click", addItem);
-item.addEventListener("keydown", (event) => {
+itemName.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         addItem();
     }
