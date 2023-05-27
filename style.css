@@ -17,6 +17,7 @@ body {
 }
 
 header {
+    /* height: 55px; */
     text-align: center;
     color: white;
     background: var(--title-background);
@@ -26,6 +27,11 @@ header {
 h1 {
     padding: 10px;
     font-size: 18pt;
+}
+
+section {
+    overflow-y: auto;
+    max-height: 530px;
 }
 
 section > p {
