@@ -21,5 +21,17 @@ itemName.addEventListener("keydown", (event) => {
     }
 });
 
-const items = document.querySelectorAll('section > p');
-const deleteButtons = document.querySelectorAll('.delete');
+// const items = document.querySelectorAll('section > p');
+// const deleteButtons = document.querySelectorAll('.delete');
+section.addEventListener('click', (event) => {
+    if (event.target.tagName === "I") {
+        const id = event.target.parentNode.parentNode.getAttribute('id');
+        let items = section.children;
+        for (const item of items) {
+            if (item.getAttribute("id") === id) {
+                section.removeChild(item);
+                return;
+            }
+        }
+    }
+});
